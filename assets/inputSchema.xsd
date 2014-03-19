@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:simpleType name="stringtype">
+  <xs:restriction base="xs:string"/>
+</xs:simpleType>
+
+<xs:simpleType name="inttype">
+  <xs:restriction base="xs:positiveInteger"/>
+</xs:simpleType>
+
+<xs:simpleType name="dectype">
+  <xs:restriction base="xs:decimal"/>
+</xs:simpleType>
+
+<xs:simpleType name="orderidtype">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="[0-9]{6}"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="nodetype">
+  <xs:sequence>
+    <xs:element name="name" type="stringtype"></xs:element>
+  </xs:sequence>
+</xs:complexType>
+
+<!-- represents precedence of a node to another node but this
+distance must be one -->
+<xs:complexType name="nextnodetype">
+<!-- Será que há precedencia de itemsets ou apenas de items? -->
+  <xs:sequence>
+    <xs:element name="before"></xs:element>
+    <xs:element name="after"></xs:element>
+  </xs:sequence>
+</xs:complexType>
+
+<!-- represents precedence of a node to another node but this
+distance can be greater than one -->
+<xs:complexType name="min_precedestype">
+  <xs:sequence>
+    <xs:element name="precedes" type="nodetype"></xs:element>
+    <xs:element name="procedes" type="nodetype"></xs:element>
+  </xs:sequence>
+</xs:complexType>
+
+
+<xs:complexType name="restrictiontype">
+  <xs:sequence>
+    <xs:element name="title" type="stringtype"/>
+    <xs:element name="note" type="stringtype" minOccurs="0"/>
+    <xs:element name="root" type="stringtype" minOccurs="0" maxOccurs="1"></xs:element>
+    <xs:element name="leaf" type="stringtype" minOccurs="0" maxOccurs="1"></xs:element>
+    <xs:element name="min_precedes" type="min_precedestype" minOccurs="0" maxOccurs="unbounded"></xs:element>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="restrictionsettype">
+  <xs:sequence>
+    <xs:element name="restriction" maxOccurs="unbounded" type="restrictiontype"/>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:element name="restrictionset" type="restrictionsettype"></xs:element>
+
+</xs:schema>

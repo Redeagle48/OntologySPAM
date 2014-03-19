@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!--  <node></node> colocar chaves para garantir a consistência da restrição-->
+
+<restrictionset>
+  <restriction>
+  	<title>Restriction1</title>
+  	<note>Nota</note>
+  	<root>Benfica</root>
+  	<leaf>Porto</leaf>
+  	<min_precedes>
+  		<precedes>
+  			<name>Braga</name>
+  		</precedes>
+  		<procedes>
+  			<name>Nacional</name>
+  		</procedes>
+  	</min_precedes>
+  	<min_precedes>
+  		<precedes>
+  			<name>Penafiel</name>
+  		</precedes>
+  		<procedes>
+  			<name>Moreirense</name>
+  		</procedes>
+  	</min_precedes>
+  </restriction>
+</restrictionset>

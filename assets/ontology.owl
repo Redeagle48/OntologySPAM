@@ -1,0 +1,985 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.d2pm.com/ontologies/ontology.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.d2pm.com/ontologies/ontology.owl">
+    <Prefix name="" IRI="http://www.d2pm.com/ontologies/ontology.owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Ontology to represent sequential and concurrent events in sequential pattern mining.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Item"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Itemset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sequence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConcurrent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFirst"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFirstItem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFirstItemset"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasItem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasItemset"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLast"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLastItem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLastItemset"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNext"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPrecedent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isFirst"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isFirstItem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isFirstItemset"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLast"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLastItem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLastItemset"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isNext"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPrecedent"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Item"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Itemset"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sequence"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Item"/>
+        <NamedIndividual IRI="#Atum"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Atum"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Item"/>
+        <NamedIndividual IRI="#Benfica"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Benfica"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Item"/>
+        <NamedIndividual IRI="#Braga"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Braga"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Item"/>
+        <NamedIndividual IRI="#Canja"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Canja"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Item"/>
+        <NamedIndividual IRI="#Moreirense"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Moreirense"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Item"/>
+        <NamedIndividual IRI="#Nacional"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Nacional"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Item"/>
+        <NamedIndividual IRI="#Penafiel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Penafiel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Item"/>
+        <NamedIndividual IRI="#Porto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Porto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Itemset"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Itemset"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isLast"/>
+        <NamedIndividual IRI="#Atum"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isLastItem"/>
+        <NamedIndividual IRI="#Atum"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Atum"/>
+        <NamedIndividual IRI="#Braga"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Atum"/>
+        <NamedIndividual IRI="#Benfica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Atum"/>
+        <NamedIndividual IRI="#Atum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Atum"/>
+        <NamedIndividual IRI="#Moreirense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Atum"/>
+        <NamedIndividual IRI="#Nacional"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Atum"/>
+        <NamedIndividual IRI="#Penafiel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Atum"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Atum"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Atum"/>
+        <NamedIndividual IRI="#Canja"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Atum"/>
+        <NamedIndividual IRI="#Porto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFirst"/>
+        <NamedIndividual IRI="#Benfica"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFirstItem"/>
+        <NamedIndividual IRI="#Benfica"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Benfica"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Benfica"/>
+        <NamedIndividual IRI="#Braga"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Benfica"/>
+        <NamedIndividual IRI="#Atum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Benfica"/>
+        <NamedIndividual IRI="#Benfica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Benfica"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Benfica"/>
+        <NamedIndividual IRI="#Porto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Benfica"/>
+        <NamedIndividual IRI="#Canja"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Benfica"/>
+        <NamedIndividual IRI="#Nacional"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Benfica"/>
+        <NamedIndividual IRI="#Penafiel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Benfica"/>
+        <NamedIndividual IRI="#Moreirense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPrecedent"/>
+        <NamedIndividual IRI="#Braga"/>
+        <NamedIndividual IRI="#Nacional"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Braga"/>
+        <NamedIndividual IRI="#Canja"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Braga"/>
+        <NamedIndividual IRI="#Nacional"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Braga"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Braga"/>
+        <NamedIndividual IRI="#Penafiel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Braga"/>
+        <NamedIndividual IRI="#Moreirense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Braga"/>
+        <NamedIndividual IRI="#Braga"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Braga"/>
+        <NamedIndividual IRI="#Benfica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Braga"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Braga"/>
+        <NamedIndividual IRI="#Porto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Braga"/>
+        <NamedIndividual IRI="#Atum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFirst"/>
+        <NamedIndividual IRI="#Canja"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFirstItem"/>
+        <NamedIndividual IRI="#Canja"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Canja"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Canja"/>
+        <NamedIndividual IRI="#Moreirense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Canja"/>
+        <NamedIndividual IRI="#Penafiel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Canja"/>
+        <NamedIndividual IRI="#Benfica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Canja"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Canja"/>
+        <NamedIndividual IRI="#Canja"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Canja"/>
+        <NamedIndividual IRI="#Braga"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Canja"/>
+        <NamedIndividual IRI="#Nacional"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Canja"/>
+        <NamedIndividual IRI="#Atum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Canja"/>
+        <NamedIndividual IRI="#Porto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPrecedent"/>
+        <NamedIndividual IRI="#Moreirense"/>
+        <NamedIndividual IRI="#Penafiel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Moreirense"/>
+        <NamedIndividual IRI="#Porto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Moreirense"/>
+        <NamedIndividual IRI="#Penafiel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Moreirense"/>
+        <NamedIndividual IRI="#Canja"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Moreirense"/>
+        <NamedIndividual IRI="#Benfica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Moreirense"/>
+        <NamedIndividual IRI="#Braga"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Moreirense"/>
+        <NamedIndividual IRI="#Moreirense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Moreirense"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Moreirense"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Moreirense"/>
+        <NamedIndividual IRI="#Nacional"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Moreirense"/>
+        <NamedIndividual IRI="#Atum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPrecedent"/>
+        <NamedIndividual IRI="#Nacional"/>
+        <NamedIndividual IRI="#Braga"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Nacional"/>
+        <NamedIndividual IRI="#Penafiel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Nacional"/>
+        <NamedIndividual IRI="#Benfica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Nacional"/>
+        <NamedIndividual IRI="#Canja"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Nacional"/>
+        <NamedIndividual IRI="#Braga"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Nacional"/>
+        <NamedIndividual IRI="#Atum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Nacional"/>
+        <NamedIndividual IRI="#Nacional"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Nacional"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Nacional"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Nacional"/>
+        <NamedIndividual IRI="#Porto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Nacional"/>
+        <NamedIndividual IRI="#Moreirense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPrecedent"/>
+        <NamedIndividual IRI="#Penafiel"/>
+        <NamedIndividual IRI="#Moreirense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Penafiel"/>
+        <NamedIndividual IRI="#Porto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Penafiel"/>
+        <NamedIndividual IRI="#Moreirense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Penafiel"/>
+        <NamedIndividual IRI="#Benfica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Penafiel"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Penafiel"/>
+        <NamedIndividual IRI="#Atum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Penafiel"/>
+        <NamedIndividual IRI="#Nacional"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Penafiel"/>
+        <NamedIndividual IRI="#Canja"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Penafiel"/>
+        <NamedIndividual IRI="#Penafiel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Penafiel"/>
+        <NamedIndividual IRI="#Braga"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Penafiel"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isLast"/>
+        <NamedIndividual IRI="#Porto"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isLastItem"/>
+        <NamedIndividual IRI="#Porto"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Porto"/>
+        <NamedIndividual IRI="#Moreirense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Porto"/>
+        <NamedIndividual IRI="#Braga"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Porto"/>
+        <NamedIndividual IRI="#Benfica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Porto"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Porto"/>
+        <NamedIndividual IRI="#Porto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Porto"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Porto"/>
+        <NamedIndividual IRI="#Canja"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Porto"/>
+        <NamedIndividual IRI="#Penafiel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Porto"/>
+        <NamedIndividual IRI="#Atum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Porto"/>
+        <NamedIndividual IRI="#Nacional"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFirst"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Benfica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFirstItem"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Benfica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasItem"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Penafiel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasItem"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Moreirense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasItem"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Braga"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasItem"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Nacional"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLast"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Porto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLastItem"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Porto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Braga"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Benfica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Nacional"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Atum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Penafiel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Canja"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Moreirense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Porto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFirst"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#Canja"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFirstItem"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#Canja"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLast"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#Atum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLastItem"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#Atum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#Penafiel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#Moreirense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#Canja"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#Benfica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#Braga"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#Porto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#Nacional"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#Atum"/>
+    </ObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFirstItem"/>
+        <ObjectProperty IRI="#hasFirst"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFirstItemset"/>
+        <ObjectProperty IRI="#hasFirst"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasLastItem"/>
+        <ObjectProperty IRI="#hasLast"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasLastItemset"/>
+        <ObjectProperty IRI="#hasLast"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isFirstItem"/>
+        <ObjectProperty IRI="#isFirst"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isFirstItemset"/>
+        <ObjectProperty IRI="#isFirst"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isLastItem"/>
+        <ObjectProperty IRI="#isLast"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isLastItemset"/>
+        <ObjectProperty IRI="#isLast"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isNext"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isFirst"/>
+        <ObjectProperty IRI="#hasFirst"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isFirstItem"/>
+        <ObjectProperty IRI="#hasFirstItem"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasFirstItemset"/>
+        <ObjectProperty IRI="#isFirstItemset"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isLast"/>
+        <ObjectProperty IRI="#hasLast"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasLastItem"/>
+        <ObjectProperty IRI="#isLastItem"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasLastItemset"/>
+        <ObjectProperty IRI="#isLastItemset"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasNext"/>
+        <ObjectProperty IRI="#isNext"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isPrecedent"/>
+        <ObjectProperty IRI="#hasPrecedent"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasFirst"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasFirstItem"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasFirstItemset"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasLast"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasLastItem"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasLastItemset"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isFirst"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isFirstItem"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isFirstItemset"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isLast"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isLastItem"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isLastItemset"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFirstItem"/>
+        <Class IRI="#Itemset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFirstItemset"/>
+        <Class IRI="#Sequence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasItem"/>
+        <Class IRI="#Itemset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasItemset"/>
+        <Class IRI="#Sequence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLastItem"/>
+        <Class IRI="#Itemset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLastItemset"/>
+        <Class IRI="#Sequence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isFirstItem"/>
+        <Class IRI="#Item"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isFirstItemset"/>
+        <Class IRI="#Itemset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isLastItem"/>
+        <Class IRI="#Item"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isLastItemset"/>
+        <Class IRI="#Itemset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isLastItemset"/>
+        <Class IRI="#Sequence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFirstItem"/>
+        <Class IRI="#Item"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFirstItemset"/>
+        <Class IRI="#Itemset"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasItem"/>
+        <Class IRI="#Item"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasItemset"/>
+        <Class IRI="#Itemset"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLastItem"/>
+        <Class IRI="#Item"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLastItemset"/>
+        <Class IRI="#Itemset"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isFirstItem"/>
+        <Class IRI="#Itemset"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isFirstItemset"/>
+        <Class IRI="#Sequence"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isLastItem"/>
+        <Class IRI="#Itemset"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.10-SNAPSHOT) http://owlapi.sourceforge.net -->
+

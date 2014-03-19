@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!--  <node></node> colocar chaves para garantir a consistência da restrição-->
+
+<restrictionset
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="inputSchema.xsd">
+  <restriction>
+  	<title>Restriction1</title>
+  	<note>Nota</note>
+  	<root>Benfica</root>
+  	<leaf>Porto</leaf>
+  	<min_precedes>
+  		<precedes>
+  			<name>Braga</name>
+  		</precedes>
+  		<procedes>
+  			<name>Nacional</name>
+  		</procedes>
+  	</min_precedes>
+  	<min_precedes>
+  		<precedes>
+  			<name>Penafiel</name>
+  		</precedes>
+  		<procedes>
+  			<name>Moreirense</name>
+  		</procedes>
+  	</min_precedes>
+  </restriction>
+  <restriction>
+  	<title>Restriction2</title>
+  	<note>Nota2</note>
+  	<root>Canja</root>
+  	<leaf>Atum</leaf>
+  </restriction>
+</restrictionset>
