@@ -5,10 +5,22 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+import java.util.Set;
 
 import logicprocess.FilesLocation;
+import logicprocess.OntologyHolder;
+
+import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLIndividual;
+import org.semanticweb.owlapi.model.OWLObjectPropertyExpression;
+import org.semanticweb.owlapi.model.OWLOntology;
+import org.semanticweb.owlapi.model.OWLOntologyManager;
 
 public class ProcessSequences {
 
@@ -23,7 +35,7 @@ public class ProcessSequences {
 		fFilePath = Paths.get(FilesLocation.SEQUENCES);
 	}
 
-	public void execute() {
+	public void execute(OntologyHolder ontologyHolder) {
 		try {
 			processLineByLine();
 		} catch (IOException e) {
@@ -31,8 +43,42 @@ public class ProcessSequences {
 			e.printStackTrace();
 		}
 		log("Done sequence read.");
-		
-		
+
+		//Get individuals from class
+		OWLOntology ont = ontologyHolder.getOWLOntology();
+		OWLDataFactory factory = ontologyHolder.getOWLDataFactory();
+		OWLOntologyManager manager = ontologyHolder.getOWLOntologyManager();
+
+		OWLClass item = factory.getOWLClass(IRI.create(ont.getOntologyID()
+				.getOntologyIRI().toString() + "#Itemset"));
+
+		Set<OWLIndividual> individuals = item.getIndividuals(ont);
+
+		//Get relations envolving each individual
+		for (OWLIndividual owlIndividual : individuals) {
+			System.out.println(owlIndividual.toStringID());
+			Map<OWLObjectPropertyExpression, Set<OWLIndividual>> properties = owlIndividual.getObjectPropertyValues(ont);
+
+			Set<Entry<OWLObjectPropertyExpression, Set<OWLIndividual>>> test = properties.entrySet();
+			for (Entry<OWLObjectPropertyExpression, Set<OWLIndividual>> entry : test) {
+				System.out.println("Chave: " + entry.getKey());
+				if(entry.getKey().toString().contains("#")) {
+					System.out.println("relation: " + entry.getKey().toString().split("#|>")[1]);
+				}
+				System.out.println("Valor: " + entry.getValue());
+				if(entry.getValue().toString().contains("#")) {
+					System.out.println("Item: " + entry.getValue().toString().split("#|>")[1]);
+				}
+			}
+		}
+
+		for(int i = 0; i < sequences.size() -1 ; i++) {
+			//TODO
+			//Para cada restricao mapeada na ontologia
+			//Detetar as relacoes
+			//Verificar se a sequence verifica a restricao
+		}
+
 	}
 
 	public final void processLineByLine() throws IOException {
@@ -52,7 +98,7 @@ public class ProcessSequences {
 			String name = scanner.next();
 			//String value = scanner.next();
 			log("Name is : " + quote(name.trim()));// + ", and Value is : " + quote(value.trim()));
-			
+
 			ArrayList<String> sequence = new ArrayList<String>();
 			//To skip the entry and last '<' '>'
 			for(int i = 1; i < name.length()-1; i++){
