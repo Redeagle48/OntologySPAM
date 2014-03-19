@@ -8,23 +8,23 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:noNamespaceSchemaLocation="inputSchema.xsd">
   <restriction>
   	<title>Restriction1</title>
-  	<note>Nota</note>
-  	<root>Benfica</root>
-  	<leaf>Porto</leaf>
+  	<note>Simple Example</note>
+  	<root>a</root>
+  	<leaf>b</leaf>
   	<min_precedes>
   		<precedes>
-  			<name>Braga</name>
+  			<name>d</name>
   		</precedes>
   		<procedes>
-  			<name>Nacional</name>
+  			<name>e</name>
   		</procedes>
   	</min_precedes>
   	<min_precedes>
   		<precedes>
-  			<name>Penafiel</name>
+  			<name>a</name>
   		</precedes>
   		<procedes>
-  			<name>Moreirense</name>
+  			<name>e</name>
   		</procedes>
   	</min_precedes>
   </restriction>

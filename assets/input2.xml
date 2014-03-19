@@ -6,24 +6,8 @@
 <restrictionset>
   <restriction>
   	<title>Restriction1</title>
-  	<note>Nota</note>
-  	<root>Benfica</root>
-  	<leaf>Porto</leaf>
-  	<min_precedes>
-  		<precedes>
-  			<name>Braga</name>
-  		</precedes>
-  		<procedes>
-  			<name>Nacional</name>
-  		</procedes>
-  	</min_precedes>
-  	<min_precedes>
-  		<precedes>
-  			<name>Penafiel</name>
-  		</precedes>
-  		<procedes>
-  			<name>Moreirense</name>
-  		</procedes>
-  	</min_precedes>
+  	<note>Simple Restriction</note>
+  	<root>a</root>
+  	<leaf>b</leaf>
   </restriction>
 </restrictionset>

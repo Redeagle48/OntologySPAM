@@ -10,18 +10,21 @@ import org.semanticweb.owlapi.reasoner.OWLReasonerConfiguration;
 import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
 import org.semanticweb.owlapi.reasoner.SimpleConfiguration;
 
+import processsequences.ProcessSequences;
 import processxml.ProcessXML;
 
 public class LogicProcess {
 
 	ProcessXML processxml;
 	OntologyHolder ontologyHolder;
+	ProcessSequences processSequences;
 
 	public LogicProcess(){}
 
 	public void init() {
 		processxml = new ProcessXML();
 		ontologyHolder = new OntologyHolder();
+		processSequences = new ProcessSequences();
 
 		// The OWLOntologyManager is at the heart of the OWL API, we can create
 		// an instance of this using the OWLManager class, which will set up
@@ -51,7 +54,8 @@ public class LogicProcess {
 
 	public void execute() {
 		init();
-		processxml.execute(ontologyHolder);
+		//processxml.execute(ontologyHolder);
+		processSequences.execute();
 	}
 
 }
