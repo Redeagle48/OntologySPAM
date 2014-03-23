@@ -4,32 +4,34 @@ import java.util.ArrayList;
 
 import logicprocess.RestrictionSequence;
 
-public class Restriction_hasFirst extends RestrictionSemantic {
-	
+public class Restriction_hasLastItem extends RestrictionSemantic {
+
 	String item;
-	//RestrictionSequence restrictionSequence;
-	
-	public Restriction_hasFirst(String item, RestrictionSequence restrictionSequence) {
+
+	public Restriction_hasLastItem(String item, RestrictionSequence restrictionSequence) {
 		this.item = item;
 		//this.restrictionSequence = restrictionSequence;
 		super.restrictionSequence = restrictionSequence;
 	}
-	
+
+	@Override
+	public RestrictionSequence getRestrictionSequence() {
+		return restrictionSequence;
+	}
+
+	@Override
 	public String getItem() {
 		return item;
 	}
-	
-	public RestrictionSequence getRestrictionSequence() {
-		return super.restrictionSequence;
-	}
-	
+
 	@Override
 	public boolean execute(ArrayList<String> sequence){
-		return sequence.get(0).equals(item);
+		return true;
 	}
 
 	@Override
 	public String getRelationName() {
-		return "hasFirst";
+		return "hasLastItem";
 	}
+
 }
