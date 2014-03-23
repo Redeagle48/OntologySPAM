@@ -2,6 +2,8 @@ package logicprocess;
 
 import java.util.ArrayList;
 
+import semanticRestrictions.RestrictionSemantic;
+
 
 /****************
  * Class representing the restriction being analyzed
@@ -12,17 +14,17 @@ import java.util.ArrayList;
 public class RestrictionSequence {
 
 	final int ID;
-	ArrayList<String> items;
 	String sequenceName;
+	ArrayList<String> items;
+	ArrayList<RestrictionSemantic> relations;
 	boolean hasRoot;
 	boolean hasLeaf;
 	
 	public RestrictionSequence(String sequence) {
 		ID = 1;
-		hasRoot = false;
-		hasLeaf = false;
-		items = new ArrayList<String>();
 		this.sequenceName = sequence;
+		relations = new ArrayList<RestrictionSemantic>();
+		items = new ArrayList<String>();
 	}
 	
 	public String getSequenceName() {
@@ -31,6 +33,14 @@ public class RestrictionSequence {
 
 	public void setSequenceName(String sequence) {
 		this.sequenceName = sequence;
+	}
+	
+	public void addRelation(RestrictionSemantic restricitonSemantic){
+		relations.add(restricitonSemantic);
+	}
+	
+	public ArrayList<RestrictionSemantic> getRelations(){
+		return relations;
 	}
 	
 	public void insertItem(String item){

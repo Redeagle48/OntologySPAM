@@ -25,6 +25,8 @@ public class LogicProcess {
 		processxml = new ProcessXML();
 		ontologyHolder = new OntologyHolder();
 		processSequences = new ProcessSequences();
+		
+		GlobalVariables.restrictonManager = new RestrictionManager();
 
 		// The OWLOntologyManager is at the heart of the OWL API, we can create
 		// an instance of this using the OWLManager class, which will set up

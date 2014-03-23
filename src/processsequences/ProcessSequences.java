@@ -1,6 +1,8 @@
 package processsequences;
 
 import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
@@ -12,7 +14,9 @@ import java.util.Scanner;
 import java.util.Set;
 
 import logicprocess.FilesLocation;
+import logicprocess.GlobalVariables;
 import logicprocess.OntologyHolder;
+import logicprocess.RestrictionSequence;
 
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
@@ -21,6 +25,8 @@ import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLObjectPropertyExpression;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
+
+import semanticRestrictions.RestrictionSemantic;
 
 public class ProcessSequences {
 
@@ -54,9 +60,10 @@ public class ProcessSequences {
 
 		Set<OWLIndividual> individuals = item.getIndividuals(ont);
 
-		//Get relations envolving each individual
+		//Get relations evolving each individual restriction
 		for (OWLIndividual owlIndividual : individuals) {
-			System.out.println(owlIndividual.toStringID());
+			RestrictionSequence restrictionSequence = new RestrictionSequence(owlIndividual.toStringID());
+			System.out.println("Restriciton Name: " + owlIndividual.toStringID());
 			Map<OWLObjectPropertyExpression, Set<OWLIndividual>> properties = owlIndividual.getObjectPropertyValues(ont);
 
 			Set<Entry<OWLObjectPropertyExpression, Set<OWLIndividual>>> test = properties.entrySet();
@@ -64,19 +71,53 @@ public class ProcessSequences {
 				System.out.println("Chave: " + entry.getKey());
 				if(entry.getKey().toString().contains("#")) {
 					System.out.println("relation: " + entry.getKey().toString().split("#|>")[1]);
+					String relation = entry.getKey().toString().split("#|>")[1];
+					
+					System.out.println("Valor: " + entry.getValue());
+					String element = "";
+					if(entry.getValue().toString().contains("#")) {
+						System.out.println("Item: " + entry.getValue().toString().split("#|>")[1]);
+						element = entry.getValue().toString().split("#|>")[1];
+					}
+					
+					try {
+						Constructor c;
+						RestrictionSemantic restrictionSemantic = null;
+						try {
+							c = Class.forName("semanticRestrictions.Restriction_"+relation).getConstructor(String.class, RestrictionSequence.class);
+							try {
+								restrictionSemantic = (RestrictionSemantic) c.newInstance(element, restrictionSequence);
+								System.out.println("The relation: " + restrictionSemantic.getRestrictionSequence().getSequenceName());
+								System.out.println("The item: " + restrictionSemantic.getItem());
+							} catch (IllegalArgumentException
+									| InvocationTargetException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+						} catch (NoSuchMethodException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						} catch (SecurityException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+						restrictionSequence.addRelation(restrictionSemantic);
+						
+					} catch (InstantiationException | IllegalAccessException
+							| ClassNotFoundException e) {
+						System.out.println("******EXCEPTION: The Class \"semanticRestrictions.Restriction_"+relation+"\" was not found.");
+					}
 				}
-				System.out.println("Valor: " + entry.getValue());
-				if(entry.getValue().toString().contains("#")) {
-					System.out.println("Item: " + entry.getValue().toString().split("#|>")[1]);
-				}
+				
+				
+				GlobalVariables.restrictonManager.addRestriction(restrictionSequence);
 			}
 		}
-
+		
+		//for each input sequence return which respect some restriction
 		for(int i = 0; i < sequences.size() -1 ; i++) {
-			//TODO
-			//Para cada restricao mapeada na ontologia
-			//Detetar as relacoes
 			//Verificar se a sequence verifica a restricao
+			
 		}
 
 	}
