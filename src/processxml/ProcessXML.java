@@ -127,7 +127,7 @@ public class ProcessXML
 			//if(nodeList.item(i) instanceof Element && nodeList.item(i).getNodeName().equals("restriction"));
 			//Node node = nodeList.item(i);
 
-			Node node = nodeList.item(1); // extrai primeira restricao
+			Node node = nodeList.item(i); // extrai primeira restricao
 			System.out.println("Restriction name: " + node.getNodeName());
 
 			if (node instanceof Element && nodeList.item(1).getNodeName().equals("restriction")) {

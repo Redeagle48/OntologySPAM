@@ -72,11 +72,11 @@ public class Process_minPrecedes extends ProcessRestrictionElements{
 		Element precedesElement = (Element) eElement.getElementsByTagName("precedes").item(0);
 		Element procedesElement = (Element) eElement.getElementsByTagName("procedes").item(0);
 
-		System.out.println("Precedes: " + precedesElement.getElementsByTagName("name").item(0).getTextContent());
-		System.out.println("Procedes: " + procedesElement.getElementsByTagName("name").item(0).getTextContent());
+		System.out.println("Precedes: " + precedesElement.getTextContent());
+		System.out.println("Procedes: " + procedesElement.getTextContent());
 
-		precedesValue = precedesElement.getElementsByTagName("name").item(0).getTextContent();
-		procedesValue = procedesElement.getElementsByTagName("name").item(0).getTextContent();
+		precedesValue = precedesElement.getTextContent();
+		procedesValue = procedesElement.getTextContent();
 
 		OWLOntology ont = ontologyHolder.getOWLOntology();
 		OWLDataFactory factory = ontologyHolder.getOWLDataFactory();

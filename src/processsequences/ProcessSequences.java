@@ -110,8 +110,9 @@ public class ProcessSequences {
 				}
 
 
-				GlobalVariables.restrictonManager.addRestriction(restrictionSequence);
+
 			}
+			GlobalVariables.restrictonManager.addRestriction(restrictionSequence);
 		}
 
 		//for each input sequence return which respect some restriction
@@ -124,31 +125,45 @@ public class ProcessSequences {
 	 * Check if the sequences respect the restrictions specified
 	 */
 	public void verifySequences(){
-		
+
 		boolean[] sequencesRespectRestrictions = new boolean[sequences.size()];
-		
+		for (int k = 0 ; k < sequencesRespectRestrictions.length; k++){
+			sequencesRespectRestrictions[k] = true;
+		}
+
+		System.out.println("\n*********VERIFYING SEQUENCES***************");
+
 		//for each input sequence return which respect some restriction
 		for(int i = 0; i < sequences.size() ; i++) {
 			//Verificar se a sequence verifica a restricao
-			System.out.println("Sequence here: " + sequences.get(i));
+			System.out.println("\nSequence here: " + sequences.get(i));
 			ArrayList<RestrictionSequence> restrictionSet= GlobalVariables.restrictonManager.getRestrictionSet();
 			//For each restriction
-			for (RestrictionSequence restrictionSequence : restrictionSet) {
-				System.out.println("Handling restriction: " + restrictionSequence.getSequenceName());
+			for (int j = 0; j < restrictionSet.size(); j++) {
+				RestrictionSequence restrictionSequence = restrictionSet.get(j);
+				System.out.println("===> Handling restriction: " + restrictionSequence.getSequenceName());
 				ArrayList<RestrictionSemantic> relations = restrictionSequence.getRelations();
 				//For each relation in the restriction
 				for (RestrictionSemantic restrictionSemantic : relations) {
-					System.out.println("Handling relations: " + restrictionSemantic);
+					System.out.println("=======> Handling relation: " + restrictionSemantic.getRelationName());
 					//if a sequence does not respect the relation => restriction is violated
 					if(!restrictionSemantic.execute(sequences.get(i))){
-						System.out.println("Sequence " + sequences.get(i) + " doesn't respect the restriction " + restrictionSequence.getSequenceName());
+						System.out.println("=============>Sequence " + sequences.get(i) 
+								+ " doesn't respect the restriction " + restrictionSequence.getSequenceName()
+								+ " in the relation " + restrictionSemantic.getRelationName() +"\n");
 						sequencesRespectRestrictions[i] = false;
 						break;
 					}
 				}
+				System.out.println();
+				if(sequencesRespectRestrictions[i])
+					System.out.println("The Sequence " + sequences.get(i) + " respects the restriction "
+							+ restrictionSequence.getSequenceName()+"\n");
+				sequencesRespectRestrictions[i] = true;
 			}
-
 		}
+
+
 	}
 
 	public final void processLineByLine() throws IOException {

@@ -10,4 +10,14 @@
   	<root>a</root>
   	<leaf>b</leaf>
   </restriction>
+  <restriction>
+  	<title>Restriction2</title>
+  	<note>Simply Restriction</note>
+  	<root>d</root>
+  	<leaf>c</leaf>
+  	<min_precedes>
+  		<precedes>e</precedes>
+  		<procedes>f</procedes>
+  	</min_precedes>
+  </restriction>
 </restrictionset>

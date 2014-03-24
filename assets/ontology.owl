@@ -67,6 +67,9 @@
         <ObjectProperty IRI="#isFirstItemset"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isItem"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isLast"/>
     </Declaration>
     <Declaration>
@@ -102,6 +105,14 @@
         <NamedIndividual IRI="#Restriction1"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Itemset"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Item"/>
         <NamedIndividual IRI="#a"/>
     </ClassAssertion>
@@ -116,6 +127,38 @@
     <ClassAssertion>
         <Class abbreviatedIRI="owl:Thing"/>
         <NamedIndividual IRI="#b"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Item"/>
+        <NamedIndividual IRI="#c"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#c"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Item"/>
+        <NamedIndividual IRI="#d"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#d"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Item"/>
+        <NamedIndividual IRI="#e"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#e"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Item"/>
+        <NamedIndividual IRI="#f"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#f"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasFirst"/>
@@ -140,7 +183,32 @@
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
         <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#f"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
         <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#e"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#d"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction1"/>
+        <NamedIndividual IRI="#c"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
@@ -151,6 +219,76 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
         <NamedIndividual IRI="#Restriction1"/>
         <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFirst"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#d"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFirstItem"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#d"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasItem"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#e"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasItem"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#f"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLast"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#c"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLastItem"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#c"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#e"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#f"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#c"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#d"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#Restriction2"/>
+        <NamedIndividual IRI="#b"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isFirst"/>
@@ -165,6 +303,21 @@
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
         <NamedIndividual IRI="#a"/>
+        <NamedIndividual IRI="#f"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#a"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#a"/>
+        <NamedIndividual IRI="#e"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#a"/>
         <NamedIndividual IRI="#Restriction1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -176,6 +329,16 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
         <NamedIndividual IRI="#a"/>
         <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#a"/>
+        <NamedIndividual IRI="#d"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#a"/>
+        <NamedIndividual IRI="#c"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isLast"/>
@@ -190,6 +353,21 @@
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
         <NamedIndividual IRI="#b"/>
+        <NamedIndividual IRI="#d"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#b"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#b"/>
+        <NamedIndividual IRI="#e"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#b"/>
         <NamedIndividual IRI="#Restriction1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -200,7 +378,217 @@
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
         <NamedIndividual IRI="#b"/>
+        <NamedIndividual IRI="#c"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#b"/>
         <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#b"/>
+        <NamedIndividual IRI="#f"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isLast"/>
+        <NamedIndividual IRI="#c"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isLastItem"/>
+        <NamedIndividual IRI="#c"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#c"/>
+        <NamedIndividual IRI="#b"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#c"/>
+        <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#c"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#c"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#c"/>
+        <NamedIndividual IRI="#c"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#c"/>
+        <NamedIndividual IRI="#d"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#c"/>
+        <NamedIndividual IRI="#e"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#c"/>
+        <NamedIndividual IRI="#f"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFirst"/>
+        <NamedIndividual IRI="#d"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFirstItem"/>
+        <NamedIndividual IRI="#d"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#d"/>
+        <NamedIndividual IRI="#c"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#d"/>
+        <NamedIndividual IRI="#b"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#d"/>
+        <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#d"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#d"/>
+        <NamedIndividual IRI="#f"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#d"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#d"/>
+        <NamedIndividual IRI="#d"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#d"/>
+        <NamedIndividual IRI="#e"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isItem"/>
+        <NamedIndividual IRI="#e"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPrecedent"/>
+        <NamedIndividual IRI="#e"/>
+        <NamedIndividual IRI="#f"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#e"/>
+        <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#e"/>
+        <NamedIndividual IRI="#b"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#e"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#e"/>
+        <NamedIndividual IRI="#c"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#e"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#e"/>
+        <NamedIndividual IRI="#f"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#e"/>
+        <NamedIndividual IRI="#e"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#e"/>
+        <NamedIndividual IRI="#d"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPrecedent"/>
+        <NamedIndividual IRI="#f"/>
+        <NamedIndividual IRI="#e"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isItem"/>
+        <NamedIndividual IRI="#f"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#f"/>
+        <NamedIndividual IRI="#f"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#f"/>
+        <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#f"/>
+        <NamedIndividual IRI="#b"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#f"/>
+        <NamedIndividual IRI="#Restriction1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#f"/>
+        <NamedIndividual IRI="#c"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#f"/>
+        <NamedIndividual IRI="#Restriction2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#f"/>
+        <NamedIndividual IRI="#d"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <NamedIndividual IRI="#f"/>
+        <NamedIndividual IRI="#e"/>
     </ObjectPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasFirstItem"/>
@@ -247,8 +635,12 @@
         <ObjectProperty IRI="#hasFirstItem"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#isFirstItemset"/>
         <ObjectProperty IRI="#hasFirstItemset"/>
+        <ObjectProperty IRI="#isFirstItemset"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isItem"/>
+        <ObjectProperty IRI="#hasItem"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#isLast"/>
@@ -263,8 +655,8 @@
         <ObjectProperty IRI="#isLastItemset"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#isNext"/>
         <ObjectProperty IRI="#hasNext"/>
+        <ObjectProperty IRI="#isNext"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#isPrecedent"/>
@@ -339,6 +731,10 @@
         <Class IRI="#Itemset"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isItem"/>
+        <Class IRI="#Item"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isLastItem"/>
         <Class IRI="#Item"/>
     </ObjectPropertyDomain>
@@ -381,6 +777,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isFirstItemset"/>
         <Class IRI="#Sequence"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isItem"/>
+        <Class IRI="#Itemset"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isLastItem"/>

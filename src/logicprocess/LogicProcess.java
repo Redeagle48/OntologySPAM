@@ -45,10 +45,10 @@ public class LogicProcess {
 		
 		//OWLReasonerFactory reasonerFactory = new StructuralReasonerFactory(); //Standard reasoner
 		OWLReasonerFactory reasonerFactory = new Reasoner.ReasonerFactory(); //Hermit reasoner
-		ConsoleProgressMonitor progressMonitor = new ConsoleProgressMonitor();
-		OWLReasonerConfiguration config = new SimpleConfiguration(
-				progressMonitor);
-		ontologyHolder.setOWLReasoner(reasonerFactory.createNonBufferingReasoner(ontologyHolder.getOWLOntology(),config));
+		//ConsoleProgressMonitor progressMonitor = new ConsoleProgressMonitor();
+		//OWLReasonerConfiguration config = new SimpleConfiguration(
+		//		progressMonitor);
+		ontologyHolder.setOWLReasoner(reasonerFactory.createNonBufferingReasoner(ontologyHolder.getOWLOntology()/*,config*/));
 		
 		ontologyHolder.setPrefixOWLOntologyFormat(ontologyHolder.getOWLOntology().getOntologyID().getOntologyIRI().toString());
 		System.out.println("Ontology IRI: " + ontologyHolder.getOWLOntology().getOntologyID().getOntologyIRI().toString());
@@ -56,7 +56,7 @@ public class LogicProcess {
 
 	public void execute() {
 		init();
-		//processxml.execute(ontologyHolder);
+		processxml.execute(ontologyHolder);
 		processSequences.execute(ontologyHolder);
 	}
 

@@ -39,8 +39,8 @@ distance must be one -->
 distance can be greater than one -->
 <xs:complexType name="min_precedestype">
   <xs:sequence>
-    <xs:element name="precedes" type="nodetype"></xs:element>
-    <xs:element name="procedes" type="nodetype"></xs:element>
+    <xs:element name="precedes" type="stringtype"></xs:element>
+    <xs:element name="procedes" type="stringtype"></xs:element>
   </xs:sequence>
 </xs:complexType>
 
