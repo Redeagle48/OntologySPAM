@@ -27,40 +27,6 @@ public class Process_minPrecedes extends ProcessRestrictionElements{
 
 	@Override
 	public void proceed(Node node, RestrictionSequence restrictionSequence) {
-		//		// TODO Auto-generated method stub
-		//		System.out.println("=========== Estou no minPrecedes ============");
-		//		
-		//		OWLClass item;
-		//		
-		//		NodeList nodeElements = node.getChildNodes();
-		//		//handle restriction node
-		//		for(int j = 0; j < nodeElements.getLength(); j++) {
-		//			Node element = nodeElements.item(j);
-		//			if (element instanceof Element) 
-		//				
-		//				System.out.println(element.getNodeName());
-		//				
-		//				/* Get some new classes. */
-		//				item = GlobalVariables.factory.getOWLClass(IRI.create("http://www.d2pm.com/ontologies/ontology.owl#Item"));
-		//				//OWLClass item = factory.getOWLClass(IRI.create("http://www.d2pm.com/ontologies/ontology.owl#Item"));
-		//				
-		//				System.out.println("Here: " + GlobalVariables.ontology.getOntologyID().getOntologyIRI().toString());
-		//				// Add individual
-		//				OWLIndividual john = 
-		//						GlobalVariables.factory.getOWLNamedIndividual(IRI.create(GlobalVariables.ontology.getOntologyID()
-		//						.getOntologyIRI().toString() + "#John"));
-		//
-		//				OWLClassAssertionAxiom classAssertionAx = GlobalVariables.factory.getOWLClassAssertionAxiom(
-		//						item, john);
-		//				// Add the axiom directly using the addAxiom convenience method on
-		//				// OWLOntologyManager
-		//				GlobalVariables.owlManager.addAxiom(GlobalVariables.ontology, classAssertionAx);
-		//				
-		//				Set<OWLIndividual> individuals = item.getIndividuals(GlobalVariables.ontology);
-		//				for (OWLIndividual owlIndividual : individuals) {
-		//					System.out.println(owlIndividual.toString());
-		//				}
-		//		}
 
 		System.out.println("========> Processing MinPrecedes restriction");
 		NodeList nodeElements = node.getChildNodes();
@@ -82,7 +48,74 @@ public class Process_minPrecedes extends ProcessRestrictionElements{
 		OWLDataFactory factory = ontologyHolder.getOWLDataFactory();
 		OWLOntologyManager manager = ontologyHolder.getOWLOntologyManager();
 
-		/* Get some new classes. */
+		String restrictionName = restrictionSequence.getSequenceName();
+
+		//Sequence from which this items belong
+		OWLIndividual RestrictionIndividual = factory.getOWLNamedIndividual(":"+restrictionSequence.getSequenceName(),
+				ontologyHolder.getPrefixOWLOntologyFormat());
+
+		//OWLIndividual RelationIndividual = factory.getOWLNamedIndividual(":",ontologyHolder.getPrefixOWLOntologyFormat());
+
+		OWLObjectProperty hasRelation = factory.getOWLObjectProperty(":hasRelation",ontologyHolder.getPrefixOWLOntologyFormat());
+
+		OWLIndividual minPrecedesIndividual = factory.getOWLNamedIndividual(":MinPrecedes_"+restrictionName, ontologyHolder.getPrefixOWLOntologyFormat());
+
+		OWLClass minPrecedesClass = factory.getOWLClass(":MinPrecedes", ontologyHolder.getPrefixOWLOntologyFormat());
+
+		OWLClassAssertionAxiom classAssertionAx = factory.getOWLClassAssertionAxiom(
+				minPrecedesClass, minPrecedesIndividual);
+
+		OWLObjectPropertyAssertionAxiom addaxiom2 = factory
+				.getOWLObjectPropertyAssertionAxiom(hasRelation, RestrictionIndividual, minPrecedesIndividual);
+		
+		manager.addAxiom(ont, classAssertionAx);
+		manager.addAxiom(ont,addaxiom2);
+		
+		OWLIndividual precedesIndividual = factory.getOWLNamedIndividual(":"+precedesValue, ontologyHolder.getPrefixOWLOntologyFormat());
+
+		OWLClass itemClass = factory.getOWLClass(IRI.create(ont.getOntologyID()
+				.getOntologyIRI().toString() + "#Item"));
+		
+		//Create an individual of Item
+		OWLClassAssertionAxiom classAssertionAx2 = factory.getOWLClassAssertionAxiom(itemClass,
+				precedesIndividual);
+		
+		manager.addAxiom(ont, classAssertionAx2);
+		
+		OWLIndividual procedesIndividual = factory.getOWLNamedIndividual(":"+procedesValue, ontologyHolder.getPrefixOWLOntologyFormat());
+
+		//Create an individual of Item
+		OWLClassAssertionAxiom classAssertionAx3 = factory.getOWLClassAssertionAxiom(itemClass,
+				procedesIndividual);
+		
+		manager.addAxiom(ont, classAssertionAx3);
+		
+		OWLObjectProperty precedence = factory.getOWLObjectProperty(":Precedence",ontologyHolder.getPrefixOWLOntologyFormat());
+
+		OWLObjectProperty procedence = factory.getOWLObjectProperty(":Procedence",ontologyHolder.getPrefixOWLOntologyFormat());
+
+		OWLObjectPropertyAssertionAxiom addaxiom3 = factory
+				.getOWLObjectPropertyAssertionAxiom(precedence, minPrecedesIndividual, precedesIndividual);
+		
+		OWLObjectPropertyAssertionAxiom addaxiom4 = factory
+				.getOWLObjectPropertyAssertionAxiom(procedence, minPrecedesIndividual, procedesIndividual);
+		
+		manager.addAxiom(ont,addaxiom3);
+		manager.addAxiom(ont,addaxiom4);
+		
+		ontologyHolder.processReasoner();
+
+		try {
+			manager.saveOntology(ont);
+			//restrictionSequence.insertItem(itemValue);
+			//restrictionSequence.insertRoot();
+		} catch (OWLOntologyStorageException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		/*
+		// Get some new classes.
 		OWLClass item = factory.getOWLClass(IRI.create(ont.getOntologyID()
 				.getOntologyIRI().toString() + "#Item"));
 
@@ -96,31 +129,31 @@ public class Process_minPrecedes extends ProcessRestrictionElements{
 
 		OWLClassAssertionAxiom classAssertionAx = factory.getOWLClassAssertionAxiom(
 				item, itemPrecedesIndividual);
-		
+
 		//Sequence from which this items belong
 		OWLIndividual itemsetIndividual = factory.getOWLNamedIndividual(":"+restrictionSequence.getSequenceName(),
 				ontologyHolder.getPrefixOWLOntologyFormat());
-		
+
 		OWLObjectProperty hasItem = factory.getOWLObjectProperty(":hasItem",ontologyHolder.getPrefixOWLOntologyFormat());
 
 		OWLObjectPropertyAssertionAxiom addaxiom1 = factory
 				.getOWLObjectPropertyAssertionAxiom(hasItem, itemsetIndividual, itemPrecedesIndividual);
-		
+
 		// Add individual
 		OWLIndividual itemProcedesIndividual = factory.getOWLNamedIndividual(":"+procedesValue, ontologyHolder.getPrefixOWLOntologyFormat());
 
 		OWLObjectPropertyAssertionAxiom addaxiom2 = factory
 				.getOWLObjectPropertyAssertionAxiom(hasItem, itemsetIndividual, itemProcedesIndividual);
-		
+
 		OWLClassAssertionAxiom classAssertionAx2 = factory.getOWLClassAssertionAxiom(
 				item, itemProcedesIndividual);
-		
+
 		//TODO Fazer array de axiomas
 		manager.addAxiom(ont,addaxiom1);
 		manager.addAxiom(ont,addaxiom2);
 		manager.addAxiom(ont, classAssertionAx);
 		manager.addAxiom(ont, classAssertionAx2);
-		
+
 		OWLObjectProperty hasPrecedent = factory.getOWLObjectProperty(":hasPrecedent",ontologyHolder.getPrefixOWLOntologyFormat());
 
 		OWLObjectPropertyAssertionAxiom axiom1 = factory
@@ -131,7 +164,7 @@ public class Process_minPrecedes extends ProcessRestrictionElements{
 		manager.applyChange(addAxiom1);
 
 		ontologyHolder.processReasoner();
-		
+
 		try {
 			manager.saveOntology(ont);
 			//restrictionSequence.insertItem(itemValue);
@@ -140,6 +173,6 @@ public class Process_minPrecedes extends ProcessRestrictionElements{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		 */
 	}
 }

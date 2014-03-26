@@ -57,7 +57,7 @@ public class LogicProcess {
 	public void execute() {
 		init();
 		processxml.execute(ontologyHolder);
-		processSequences.execute(ontologyHolder);
+		//processSequences.execute(ontologyHolder);
 	}
 
 }

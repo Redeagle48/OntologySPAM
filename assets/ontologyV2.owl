@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.d2pm.com/ontologies/ontology.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.d2pm.com/ontologies/ontology.owl">
+    <Prefix name="" IRI="http://www.d2pm.com/ontologies/ontology.owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Ontology to represent sequential and concurrent events in sequential pattern mining</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#BinaryRelation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Item"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Itemset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Leaf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MinPrecedes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Next"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Relation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Restriction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Root"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sequence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnaryRelation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Precedence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Procedence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBinaryRelation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLeaf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNext"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPrecedence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRelation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRoot"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasUnaryRelation"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#BinaryRelation"/>
+        <Class IRI="#Relation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Item"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Itemset"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Leaf"/>
+        <Class IRI="#UnaryRelation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MinPrecedes"/>
+        <Class IRI="#BinaryRelation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Next"/>
+        <Class IRI="#BinaryRelation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Relation"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Restriction"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Root"/>
+        <Class IRI="#UnaryRelation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sequence"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UnaryRelation"/>
+        <Class IRI="#Relation"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Precedence"/>
+        <ObjectProperty IRI="#hasPrecedence"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Procedence"/>
+        <ObjectProperty IRI="#hasPrecedence"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasBinaryRelation"/>
+        <ObjectProperty IRI="#hasRelation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasLeaf"/>
+        <ObjectProperty IRI="#hasUnaryRelation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasNext"/>
+        <ObjectProperty IRI="#hasBinaryRelation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPrecedence"/>
+        <ObjectProperty IRI="#hasBinaryRelation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRoot"/>
+        <ObjectProperty IRI="#hasUnaryRelation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasUnaryRelation"/>
+        <ObjectProperty IRI="#hasRelation"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBinaryRelation"/>
+        <Class IRI="#Item"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLeaf"/>
+        <Class IRI="#Leaf"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasNext"/>
+        <Class IRI="#Item"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRelation"/>
+        <Class IRI="#Restriction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRoot"/>
+        <Class IRI="#Root"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasUnaryRelation"/>
+        <Class IRI="#UnaryRelation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBinaryRelation"/>
+        <Class IRI="#Item"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLeaf"/>
+        <Class IRI="#Item"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasNext"/>
+        <Class IRI="#Item"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRelation"/>
+        <Class IRI="#Relation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRoot"/>
+        <Class IRI="#Item"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasUnaryRelation"/>
+        <Class IRI="#Item"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

@@ -40,33 +40,47 @@ public class Process_root extends ProcessRestrictionElements {
 
 			/* Get some new classes. */
 			OWLClass item = factory.getOWLClass(IRI.create(ont.getOntologyID()
-					.getOntologyIRI().toString() + "#Item"));
+					.getOntologyIRI().toString() + "#Root"));
 
 			// Add individual
 			//OWLIndividual itemIndividual = factory.getOWLNamedIndividual(IRI.create(ont.getOntologyID()
 			//		.getOntologyIRI().toString() + "#itemA"));
+			
+			String individualName = "Root_" + restrictionSequence.getSequenceName();
 
 			// Add individual
-			OWLIndividual itemIndividual = factory.getOWLNamedIndividual(":"+itemValue, ontologyHolder.getPrefixOWLOntologyFormat());
+			OWLIndividual relationIndividual = factory.getOWLNamedIndividual(":"+individualName, ontologyHolder.getPrefixOWLOntologyFormat());
 
-
+			//Create an individual of Root
 			OWLClassAssertionAxiom classAssertionAx = factory.getOWLClassAssertionAxiom(
-					item, itemIndividual);
+					item, relationIndividual);
 
 			manager.addAxiom(ont, classAssertionAx);
+			
+			OWLIndividual itemIndividual = factory.getOWLNamedIndividual(":"+itemValue, ontologyHolder.getPrefixOWLOntologyFormat());
 
+			OWLClass itemClass = factory.getOWLClass(IRI.create(ont.getOntologyID()
+					.getOntologyIRI().toString() + "#Item"));
+			
+			//Create an individual of Item
+			OWLClassAssertionAxiom classAssertionAx2 = factory.getOWLClassAssertionAxiom(itemClass,
+					itemIndividual);
+			
+			manager.addAxiom(ont, classAssertionAx2);
+
+			//Get the instance of the present restriction
 			/* Get some new classes. */
-			OWLClass itemset = factory.getOWLClass(IRI.create(ont.getOntologyID()
-					.getOntologyIRI().toString() + "#Itemset"));
+			OWLClass restriction = factory.getOWLClass(IRI.create(ont.getOntologyID()
+					.getOntologyIRI().toString() + "#Restriction"));
 			// Add individual
 			//OWLIndividual itemsetIndividual = factory.getOWLNamedIndividual(IRI.create(ont.getOntologyID()
 			//		.getOntologyIRI().toString() + "#itemSetA"));
 			
-			OWLIndividual itemsetIndividual = factory.getOWLNamedIndividual(":"+restrictionSequence.getSequenceName(),
+			OWLIndividual restrictionIndividual = factory.getOWLNamedIndividual(":"+restrictionSequence.getSequenceName(),
 					ontologyHolder.getPrefixOWLOntologyFormat());
 
 			OWLClassAssertionAxiom classAssertionBx = factory.getOWLClassAssertionAxiom(
-					itemset, itemsetIndividual);
+					restriction, restrictionIndividual);
 
 			manager.addAxiom(ont, classAssertionBx);
 
@@ -74,15 +88,23 @@ public class Process_root extends ProcessRestrictionElements {
 			/*OWLObjectProperty hasFirstItem = factory.getOWLObjectProperty(IRI.create(ont.getOntologyID()
 				.getOntologyIRI().toString()
 				+ "#hasFirstItem"));*/
+			
+			OWLObjectProperty hasRelation = factory.getOWLObjectProperty(":hasRelation", ontologyHolder.getPrefixOWLOntologyFormat());
 
-			OWLObjectProperty hasFirstItem = factory.getOWLObjectProperty(":hasFirstItem",ontologyHolder.getPrefixOWLOntologyFormat());
+			OWLObjectProperty hasRoot = factory.getOWLObjectProperty(":hasRoot",ontologyHolder.getPrefixOWLOntologyFormat());
+			
 
 			OWLObjectPropertyAssertionAxiom axiom1 = factory
-					.getOWLObjectPropertyAssertionAxiom(hasFirstItem, itemsetIndividual, itemIndividual);
+					.getOWLObjectPropertyAssertionAxiom(hasRelation, restrictionIndividual, relationIndividual);
+			
+			OWLObjectPropertyAssertionAxiom axiom2 = factory
+					.getOWLObjectPropertyAssertionAxiom(hasRoot, relationIndividual, itemIndividual);
 
 			AddAxiom addAxiom1 = new AddAxiom(ont, axiom1);
+			AddAxiom addAxiom2 = new AddAxiom(ont,axiom2);
 			// Now we apply the change using the manager.
 			manager.applyChange(addAxiom1);
+			manager.applyChange(addAxiom2);
 
 			//ontologyHolder.printProperties(item);
 
